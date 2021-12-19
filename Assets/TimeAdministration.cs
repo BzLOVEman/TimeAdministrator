@@ -51,30 +51,31 @@ public class TimeAdministration : MonoBehaviour {
 
 	//0.02秒ごとに呼ばれる
 	private void FixedUpdate() {
-		if (simulateSpeed != 0)
-			flame++;
-		else {
-			flame = 0;
-			//デバッグ用
-			// real = Time.realtimeSinceStartup;
-			// wasReal = Time.realtimeSinceStartup;
-			//デバッグ用終了
-		}
+		/*		if (simulateSpeed != 0)
+					flame++;
+				else {
+					flame = 0;
+					//デバッグ用
+					// real = Time.realtimeSinceStartup;
+					// wasReal = Time.realtimeSinceStartup;
+					//デバッグ用終了
+				}
 
-		if (Mathf.Abs(flame * simulateSpeed) >= fps) {
-			second += (int)( ( flame * simulateSpeed ) / (float)fps );
-			//デバッグ用
-			// real = Time.realtimeSinceStartup;
-			// Debug.Log((int)((flame * simulateSpeed) / (float)fps) + "　経過時間　" + (real - wasReal));
-			// wasReal = real;
-			//デバッグ用終了
-			bool flg;
-			//ループチェック実行　ついでにループが終わるまで実行
-			do {
-				flg = loopCheck();
-			} while (flg);
-			flame = 0;
-		}
+				if (Mathf.Abs(flame * simulateSpeed) >= fps) {
+					second += (int)( ( flame * simulateSpeed ) / (float)fps );
+					//デバッグ用
+					// real = Time.realtimeSinceStartup;
+					// Debug.Log((int)((flame * simulateSpeed) / (float)fps) + "　経過時間　" + (real - wasReal));
+					// wasReal = real;
+					//デバッグ用終了
+					//時間の繰り上がり、繰り下がりの計算
+					timeCarryUpDown();
+					flame = 0;
+				}
+		*/
+		MilliSecond += (int)( Time.deltaTime * 1000 * simulateSpeed );
+		timeCarryUpDown();
+
 	}
 
 	//月末の日付を返す
@@ -93,73 +94,69 @@ public class TimeAdministration : MonoBehaviour {
 		return -1;
 	}
 
-	bool loopCheck() {
-		//実行チェック
-		bool wasLoop = false;
-
+	//時間の繰り上がり、繰り下がりの計算を実施
+	void timeCarryUpDown() {
 		//以下時間が増えた場合
 		while (millisecond >= 1000) {
 			millisecond -= 1000;
 			second++;
-			wasLoop = true;
 		}
 
 		while (second >= 60) {
 			second -= 60;
 			minute++;
-			wasLoop = true;
 		}
 
 		while (minute >= 60) {
 			minute -= 60;
 			hour++;
-			wasLoop = true;
 		}
 
 		while (hour >= 24) {
 			hour -= 24;
 			day++;
-			wasLoop = true;
 		}
 
-		while (day >= getMonthend()) {
+		while (day > getMonthend()) {
 			day -= getMonthend();
 			month++;
-			wasLoop = true;
 		}
 
 		while (month > 12) {
 			month -= 12;
 			year++;
-			wasLoop = true;
 		}
 
 		//以下時間が減った場合
-		if (second < 0) {
+		while (millisecond < 0) {
+			millisecond += 1000;
+			second--;
+		}
+
+		while (second < 0) {
 			second += 60;
 			minute--;
-			wasLoop = true;
 		}
 
-		if (minute < 0) {
+		while (minute < 0) {
 			minute += 60;
 			hour--;
-			wasLoop = true;
 		}
 
-		if (hour < 0) {
+		while (hour < 0) {
 			hour += 24;
 			day--;
-			wasLoop = true;
 		}
 
-		if (month < 1) {
+		while (day < 1) {
+			month--;
+			day += getMonthend();
+		}
+
+		while (month < 1) {
 			month += 12;
 			year--;
-			wasLoop = true;
 		}
-
-		return wasLoop;
 	}
 
 	//以下ゲッターとセッター
@@ -183,17 +180,17 @@ public class TimeAdministration : MonoBehaviour {
 		get { return this.hour; }
 	}
 
-	public int Minutes {
+	public int Minute {
 		set { this.minute = value; }
 		get { return this.minute; }
 	}
 
-	public int Seconds {
+	public int Second {
 		set { this.second = value; }
 		get { return this.second; }
 	}
 
-	public int MiliSeconds {
+	public int MilliSecond {
 		set { this.millisecond = value; }
 		get { return this.millisecond; }
 	}
