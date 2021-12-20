@@ -532,7 +532,7 @@ MonoBehaviour:
   day: 31
   hour: 23
   minute: 59
-  second: 58
+  second: 55
   millisecond: 0
   useRealTime: 0
   simulateSpeed: 1

@@ -14,10 +14,7 @@ public class ApplyTime : MonoBehaviour {
 	}
 
 	private void LateUpdate() {
-		Debug.Log("run30a");
 		textObj.text = ta.Year + "/" + ta.Month + "/" + ta.Day + "\n"
 					+ ta.Hour + ":" + ta.Minute + ":" + ta.Second + "." + ta.MilliSecond;
-
-		Debug.Log("run30b");
 	}
 }
