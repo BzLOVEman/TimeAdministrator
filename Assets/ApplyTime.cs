@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.UI;
+// using UnityEditor.UI;
 using UnityEngine.UI;
 
 public class ApplyTime : MonoBehaviour {
@@ -14,11 +14,10 @@ public class ApplyTime : MonoBehaviour {
 	}
 
 	private void LateUpdate() {
+		Debug.Log("run30a");
 		textObj.text = ta.Year + "/" + ta.Month + "/" + ta.Day + "\n"
 					+ ta.Hour + ":" + ta.Minute + ":" + ta.Second + "." + ta.MilliSecond;
-	}
 
-	void Update() {
-
+		Debug.Log("run30b");
 	}
 }

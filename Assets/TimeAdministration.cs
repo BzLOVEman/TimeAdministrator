@@ -51,6 +51,16 @@ public class TimeAdministration : MonoBehaviour {
 
 	//0.02秒ごとに呼ばれる
 	private void FixedUpdate() {
+		Debug.Log("run31a");
+
+	}
+
+	private void LateUpdate() {
+
+		Debug.Log("run32a");
+	}
+
+	void Update() {
 		/*		if (simulateSpeed != 0)
 					flame++;
 				else {
@@ -73,8 +83,11 @@ public class TimeAdministration : MonoBehaviour {
 					flame = 0;
 				}
 		*/
+		Debug.Log("run25b");
 		MilliSecond += (int)( Time.deltaTime * 1000 * simulateSpeed );
+		Debug.Log("run25c");
 		timeCarryUpDown();
+		Debug.Log("run25a");
 
 	}
 
@@ -86,6 +99,7 @@ public class TimeAdministration : MonoBehaviour {
 				if (i + 1 == 2 && year % 4 == 0) {
 					return monthEnd[i] + 1;
 				} else {
+					Debug.Log("run9b " + i);
 					return monthEnd[i];
 				}
 			}
@@ -97,66 +111,91 @@ public class TimeAdministration : MonoBehaviour {
 	//時間の繰り上がり、繰り下がりの計算を実施
 	void timeCarryUpDown() {
 		//以下時間が増えた場合
+		Debug.Log("run16a");
 		while (millisecond >= 1000) {
+			Debug.Log("run16");
 			millisecond -= 1000;
 			second++;
 		}
 
 		while (second >= 60) {
+			Debug.Log("run17");
 			second -= 60;
 			minute++;
 		}
 
 		while (minute >= 60) {
+			Debug.Log("run18");
 			minute -= 60;
 			hour++;
 		}
 
 		while (hour >= 24) {
+			Debug.Log("run19");
 			hour -= 24;
 			day++;
 		}
 
+		Debug.Log("run10a");
 		while (day > getMonthend()) {
+			Debug.Log("run10");
 			day -= getMonthend();
+			Debug.Log("run11");
 			month++;
+			Debug.Log("run12");
 		}
 
 		while (month > 12) {
+			Debug.Log("run1");
 			month -= 12;
+			Debug.Log("run2");
 			year++;
+			Debug.Log("run3");
 		}
 
 		//以下時間が減った場合
 		while (millisecond < 0) {
+			Debug.Log("run20");
 			millisecond += 1000;
 			second--;
 		}
 
 		while (second < 0) {
+			Debug.Log("run21");
 			second += 60;
 			minute--;
 		}
 
 		while (minute < 0) {
+			Debug.Log("run22");
 			minute += 60;
 			hour--;
 		}
 
 		while (hour < 0) {
+			Debug.Log("run23");
 			hour += 24;
 			day--;
 		}
 
-		while (day < 1) {
+		Debug.Log("run13a");
+		while (day <= 0) {
+			Debug.Log("run13");
 			month--;
+			Debug.Log("run14");
 			day += getMonthend();
+			Debug.Log("run15");
 		}
 
-		while (month < 1) {
+		Debug.Log("run4a");
+		while (month <= 0) {
+			Debug.Log("run4");
 			month += 12;
+			Debug.Log("run5");
 			year--;
+			Debug.Log("run6");
 		}
+		Debug.Log("run6a");
 	}
 
 	//以下ゲッターとセッター

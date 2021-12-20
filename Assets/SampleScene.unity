@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.6924, y: -61.2633}
-  m_SizeDelta: {x: 172.0671, y: 89.458}
+  m_AnchoredPosition: {x: 106.788956, y: -135.85579}
+  m_SizeDelta: {x: 376.2603, y: 238.6429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66635845
 MonoBehaviour:
@@ -199,11 +199,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 62
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -527,14 +527,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60c48a3d293e8f4caee9fab19006c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  year: 0
-  month: 1
-  day: 1
-  hour: 0
-  minute: 0
-  second: 0
+  year: 2021
+  month: 12
+  day: 31
+  hour: 23
+  minute: 59
+  second: 58
   millisecond: 0
-  useRealTime: 1
+  useRealTime: 0
   simulateSpeed: 1
 --- !u!4 &965642634
 Transform:
