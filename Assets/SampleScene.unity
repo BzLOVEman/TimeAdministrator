@@ -175,8 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fffeeb4514b80418c4d59cf4ae9673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textObj: {fileID: 66635846}
-  ta: {fileID: 965642633}
 --- !u!114 &66635846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965642634}
-  - component: {fileID: 965642633}
+  - component: {fileID: 965642635}
   m_Layer: 0
   m_Name: Time
   m_TagString: Untagged
@@ -515,27 +513,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &965642633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965642632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f60c48a3d293e8f4caee9fab19006c1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  year: 2021
-  month: 12
-  day: 26
-  hour: 0
-  minute: 34
-  second: 0
-  millisecond: 0
-  useRealTime: 0
-  simulateSpeed: 1
 --- !u!4 &965642634
 Transform:
   m_ObjectHideFlags: 0
@@ -551,6 +528,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965642635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965642632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5ee8a2b0a2da547b460feaad27e9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  year: 0
+  month: 0
+  day: 0
+  hour: 0
+  minutes: 0
+  seconds: 0
+  miliSeconds: 0
+  useRealTime: 0
+  simulateSpeed: 0
 --- !u!1 &2059274344
 GameObject:
   m_ObjectHideFlags: 0
