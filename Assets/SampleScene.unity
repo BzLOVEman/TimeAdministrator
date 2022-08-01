@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObj: {fileID: 66635846}
   ta: {fileID: 965642635}
-  zellerCcongruence: {fileID: 965642636}
+  zellerCongruence: {fileID: 965642636}
 --- !u!114 &66635846
 MonoBehaviour:
   m_ObjectHideFlags: 0

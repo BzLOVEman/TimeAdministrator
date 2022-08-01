@@ -5,14 +5,14 @@ public class ApplyTime : MonoBehaviour {
 
 	public Text textObj;
 	public TimeAdministration ta;
-	public ZellerCcongruence zellerCcongruence;
+	public ZellerCongruence zellerCongruence;
 
 	private void LateUpdate() {
-		if(zellerCcongruence == null){
+		if(zellerCongruence == null){
 			textObj.text = ta.Year + "/" + ta.Month + "/" + ta.Day + "\n"
 						+ ta.Hour + ":" + ta.Minute + ":" + ta.Second + "." + ta.MilliSecond;
 		}else{
-			textObj.text = ta.Year + "/" + ta.Month + "/" + ta.Day + "(" + zellerCcongruence.zellerCcongruence(ta.Year, ta.Month, ta.Day) + ")" + "\n"
+			textObj.text = ta.Year + "/" + ta.Month + "/" + ta.Day + "(" + zellerCongruence.zellerCongruence(ta.Year, ta.Month, ta.Day) + ")" + "\n"
 						+ ta.Hour + ":" + ta.Minute + ":" + ta.Second + "." + ta.MilliSecond;
 		}
 	}

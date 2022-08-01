@@ -7,7 +7,7 @@ using UnityEngine;
 //https://ja.wikipedia.org/wiki/%E3%83%84%E3%82%A7%E3%83%A9%E3%83%BC%E3%81%AE%E5%85%AC%E5%BC%8F#:~:text=%E3%83%84%E3%82%A7%E3%83%A9%E3%83%BC%E3%81%AE%E5%85%AC%E5%BC%8F%EF%BC%88%E3%83%84%E3%82%A7%E3%83%A9%E3%83%BC%E3%81%AE,Christian%20Zeller)%20%E3%81%8C%E8%80%83%E6%A1%88%E3%81%97%E3%81%9F%E3%80%82
 
 //曜日を計算する
-public class ZellerCcongruence : MonoBehaviour {
+public class ZellerCongruence : MonoBehaviour {
 	public enum week{
 		saturday,
 		sunday,
@@ -18,7 +18,7 @@ public class ZellerCcongruence : MonoBehaviour {
 		friday,
 	}
 
-	public string zellerCcongruence(int y, int m, int d){
+	public string zellerCongruence(int y, int m, int d){
 		if(y <= 4 && (m < 3)){
 			Debug.LogWarning("西暦4年3月1日以前は閏年の計算が違うため、曜日に誤りが出ます。");
 		}
