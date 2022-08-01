@@ -175,6 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fffeeb4514b80418c4d59cf4ae9673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textObj: {fileID: 66635846}
+  ta: {fileID: 965642635}
+  zellerCcongruence: {fileID: 965642636}
 --- !u!114 &66635846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965642634}
   - component: {fileID: 965642635}
+  - component: {fileID: 965642636}
   m_Layer: 0
   m_Name: Time
   m_TagString: Untagged
@@ -537,18 +541,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 965642632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a5ee8a2b0a2da547b460feaad27e9a9, type: 3}
+  m_Script: {fileID: 11500000, guid: f60c48a3d293e8f4caee9fab19006c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   year: 0
   month: 0
   day: 0
   hour: 0
-  minutes: 0
-  seconds: 0
-  miliSeconds: 0
-  useRealTime: 0
-  simulateSpeed: 0
+  minute: 0
+  second: 0
+  millisecond: 0
+  useRealTime: 1
+  simulateSpeed: 1
+--- !u!114 &965642636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965642632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380612c2de0f2b945ba21adfdf4ebd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2059274344
 GameObject:
   m_ObjectHideFlags: 0
