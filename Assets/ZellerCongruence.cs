@@ -19,7 +19,7 @@ public class ZellerCongruence : MonoBehaviour {
 	}
 
 	public string zellerCongruence(int y, int m, int d){
-		if(y <= 4 && (m < 3)){
+		if(y < 4 || (y == 4 && m < 3)){
 			Debug.LogWarning("西暦4年3月1日以前は閏年の計算が違うため、曜日に誤りが出ます。");
 		}
 		int C = Gaus(y / 100f);
@@ -34,6 +34,6 @@ public class ZellerCongruence : MonoBehaviour {
 	}
 
 	public int Gaus(float g){
-		return (int)(Mathf.Floor(g));
+		return (int)Mathf.Floor(g);
 	}
 }
