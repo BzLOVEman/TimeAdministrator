@@ -553,6 +553,7 @@ MonoBehaviour:
   millisecond: 0
   useRealTime: 1
   simulateSpeed: 1
+  timeKind: 1
 --- !u!114 &965642636
 MonoBehaviour:
   m_ObjectHideFlags: 0

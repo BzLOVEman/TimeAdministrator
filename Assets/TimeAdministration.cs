@@ -39,10 +39,8 @@ public class TimeAdministration : MonoBehaviour {
 				TimeZoneInfo zone = TimeZoneInfo.Local;
 				TimeSpan offset = zone.GetUtcOffset(DateTime.Now);
 				now = DateTime.UtcNow + offset;
-				Debug.Log("run1");
 			}else{
 				now = DateTime.Now;
-				Debug.Log("run2");
 			}
 			year = now.Year;
 			month = now.Month;
