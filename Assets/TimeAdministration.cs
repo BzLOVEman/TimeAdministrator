@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //時間を管理
 public class TimeAdministration : MonoBehaviour {
 	[SerializeField, HeaderAttribute("年")]
@@ -20,12 +23,27 @@ public class TimeAdministration : MonoBehaviour {
 	private bool useRealTime;
 	[SerializeField, HeaderAttribute("再生速度。0:静止、1:リアルタイム 2～:x倍速 -:逆再生")]
 	private double simulateSpeed;
+	protected enum TimeKind{
+		world,
+		local,
+	};
+	[SerializeField, HeaderAttribute("世界協定時刻か、ローカル時刻か")]
+	private TimeKind timeKind;
 
 	private readonly int[] monthEnd = new int[12] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 	void Start() {
 		if (useRealTime) {
-			DateTime now = DateTime.Now;
+			DateTime now;
+			if(timeKind == TimeKind.world){
+				TimeZoneInfo zone = TimeZoneInfo.Local;
+				TimeSpan offset = zone.GetUtcOffset(DateTime.Now);
+				now = DateTime.UtcNow + offset;
+				Debug.Log("run1");
+			}else{
+				now = DateTime.Now;
+				Debug.Log("run2");
+			}
 			year = now.Year;
 			month = now.Month;
 			day = now.Day;
